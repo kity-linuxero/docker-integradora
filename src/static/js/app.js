@@ -53,7 +53,7 @@ function TodoListCard() {
         <React.Fragment>
             <AddItemForm onNewItem={onNewItem} />
             {items.length === 0 && (
-                <p className="text-center">No items yet! Add one above!</p>
+                <p className="text-center">Aún no hay items. ¡Agrega tu primer item arriba!</p>
             )}
             {items.map(item => (
                 <ItemDisplay
@@ -96,7 +96,7 @@ function AddItemForm({ onNewItem }) {
                     value={newItem}
                     onChange={e => setNewItem(e.target.value)}
                     type="text"
-                    placeholder="New Item"
+                    placeholder="Nuevo item"
                     aria-describedby="basic-addon1"
                 />
                 <InputGroup.Append>
@@ -106,7 +106,7 @@ function AddItemForm({ onNewItem }) {
                         disabled={!newItem.length}
                         className={submitting ? 'disabled' : ''}
                     >
-                        {submitting ? 'Adding...' : 'Add Item'}
+                        {submitting ? 'Creando...' : 'Crear item'}
                     </Button>
                 </InputGroup.Append>
             </InputGroup>
@@ -147,8 +147,8 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         onClick={toggleCompletion}
                         aria-label={
                             item.completed
-                                ? 'Mark item as incomplete'
-                                : 'Mark item as complete'
+                                ? 'Marcar item como incompleto'
+                                : 'Marcar item como completo'
                         }
                     >
                         <i
