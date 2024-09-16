@@ -1,4 +1,4 @@
-# Fundamentos y usos prácticos de contenedores Docker
+# Fundamentos y usos prácticos de Docker
 
 ![Docker](https://img.shields.io/badge/Docker-Container-blue)
 [![Powered](https://img.shields.io/badge/Powered%20by-ATE-green.svg)](https://atepba.org.ar/)
@@ -17,22 +17,6 @@ En el presente trabajo integrador se evaluará:
 
 > [!IMPORTANT]  
 > La fecha límite de entrega es el viernes 20/09/24.
-
-> [!NOTE]  
-> Highlights information that users should take into account, even when skimming.
-
-> [!TIP]
-> Optional information to help a user be more successful.
-
-> [!IMPORTANT]  
-> Crucial information necessary for users to succeed.
-
-> [!WARNING]  
-> Critical content demanding immediate user attention due to potential risks.
-
-> [!CAUTION]
-> Negative potential consequences of an action.
-
 
 ## Prerequisitos
 
