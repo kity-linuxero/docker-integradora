@@ -215,7 +215,7 @@ En la aplicación también es posible setear variables de entorno para parametri
 
 >Consulte `src/persistence/mysql.js` para mas información.
 
-**[ENTREGABLE:]**(./entregable.md#parte-5---aplicaciones-multicontainer)
+**[ENTREGABLE:](./entregable.md#parte-5---aplicaciones-multicontainer)**
 
 - [Crear una red](https://docker.idepba.com.ar/clase4.html#/network_create) para conexión entre los contenedores que servirá también para conectar a la aplicación.
 - [Crear un nuevo volumen](https://docker.idepba.com.ar/clase4.html#/volume_create) para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es `/var/lib/mysql`.
@@ -344,7 +344,7 @@ docker compose up -d
 
 Cambie la imágen del `docker compose` para que tome como origen la imágen que ha subido a Docker Hub con su usuario.
 
-[ENTREGABLE](./entregable.md#parte-6---utilizando-docker-compose)
+**[ENTREGABLE](./entregable.md#parte-6---utilizando-docker-compose)**
 
 
 
