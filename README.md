@@ -127,7 +127,7 @@ En esta parte 2, haremos algunos cambios y actualizaremos la aplicación.
 
 ### 1. Actualizar el código fuente
 
-- En el archivo `src/static/js/app.js` actualizaremos la línea 56, con los siguientes cambios: 
+- En el archivo `app/src/static/js/app.js` actualizaremos la línea 56, con los siguientes cambios: 
 
    ```diff
    - <p className="text-center">Aún no hay items. ¡Agrega tu primer item arriba!</p>
@@ -215,7 +215,7 @@ En la aplicación también es posible setear variables de entorno para parametri
 
 >Consulte `src/persistence/mysql.js` para mas información.
 
-**Teniendo todo esto en cuenta [ENTREGABLE](./entregable.md#parte-5---aplicaciones-multicontainer)**
+**[ENTREGABLE:]**(./entregable.md#parte-5---aplicaciones-multicontainer)
 
 - [Crear una red](https://docker.idepba.com.ar/clase4.html#/network_create) para conexión entre los contenedores que servirá también para conectar a la aplicación.
 - [Crear un nuevo volumen](https://docker.idepba.com.ar/clase4.html#/volume_create) para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es `/var/lib/mysql`.
