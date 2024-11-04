@@ -1,8 +1,10 @@
 # Fundamentos y usos prácticos de Docker
 
-![Docker](https://img.shields.io/badge/Docker-Container-blue)
+[![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://docker.com/)
+[![Supported by](https://img.shields.io/badge/Supported%20by-CFL410-green.svg)](https://centro410laplata.edu.ar/)
+[![Supported by](https://img.shields.io/badge/Supported%20by-IDEP-green.svg)](https://idepba.com.ar/)
 [![Powered](https://img.shields.io/badge/Powered%20by-ATE-green.svg)](https://atepba.org.ar/)
-[![Version](https://img.shields.io/badge/Version-1.0-orange)](https://docker.idepba.com.ar)
+![Version](https://img.shields.io/badge/Version-1.1-orange)
 
 ## Trabajo integrador 🐳
 
@@ -16,7 +18,7 @@ En el presente trabajo integrador se evaluará:
 - Correr la aplicación usando docker compose.
 
 > [!IMPORTANT]  
-> La fecha límite de entrega es el viernes 20/09/24.
+> La fecha límite de entrega es el 11/11/24.
 
 ## Prerequisitos
 
@@ -24,8 +26,17 @@ En el presente trabajo integrador se evaluará:
 - Tener instalado un editor de texto, como <a href="https://notepad-plus-plus.org/downloads/" target="_blank">Notepad++</a> o <a href="https://vscodium.com/" target="_blank">VSCodium</a>.
 - Tener instalado un cliente Git (opcional).
 
-> [!IMPORTANT]  
-> El **entregable** debe un zip con un documento de texto que contenga por cada parte del trabajo integrador de la sección **[ENTREGABLE]** la info solicitada. Además en el documento debe estar la url de la imágen en Docker Hub. En el zip debe estar el archivo compose final que solo con `docker compose up` la aplicación funcione sin más. El zip debe enviarse por e-mail al instructor a la dirección que aparece al final de este documento.
+
+### Forma de entrega
+
+Puede elegir alguna de estas opciones:
+
+- Realizar un [fork](https://github.com/kity-linuxero/docker-integradora/fork) del repositorio y modificar el archivo `engregable.md` y agregar el `compose` solicitado.
+- Crear un repositorio de cero y subir ahí los archivos solicitados siguiendo el template en el archivo [entregable.md](./entregable.md)
+- Crear un archivo de texto siguiendo los pasos del archivo `entregable.md` y entregar un zip con la entrega y el compose.
+
+Enviar el link del repositorio o archivo de texto por <a href="https://docker.idepba.com.ar/clase1.html#/intro-presentacion" target="_blank">mail al instructor</a>.
+
 
 ## Parte 1 - Conteinerizar una Aplicación
 
@@ -44,17 +55,17 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
     ```
 - Si no tiene un cliente git instalado, puede descargar el repositorio del siguiente [link](https://codeload.github.com/kity-linuxero/docker-integradora/zip/refs/heads/main). Luego debe descomprimir el archivo zip.
 
-- Una vez descargada la aplicación, deberías ver el código fuente de la misma con la siguiente estructura de directorios:
+- Una vez descargada la aplicación, deberías ver el código fuente de la misma con la siguiente estructura de directorios en la carpeta `app`:
 
     ```
-    docker-integradora/
-    ├─ spec/
-    ├─ src/
-    ├─ README.md
-    ├─ yarn.lock
-    ├─ package.json
-    ├─ .dockerignore
+        app/
+        ├─ spec/
+        ├─ src/
+        ├─ yarn.lock
+        ├─ package.json
+        ├─ .dockerignore
     ```
+
 
 ### 2. Buildear imágen
 
@@ -88,10 +99,9 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
     CMD ["node", "src/index.js"]
     ```
 
-**[ENTREGABLE]:**
+**[ENTREGABLE:](./entregable.md#creando-la-imágen)**
 
-- Ejecute el comando correspondiente para buildear la imágen.
-- Elija un nombre de imágen y un tag.
+- Ejecute el comando correspondiente para buildear la imágen. Elija un nombre de imágen y un tag acorde.
 - Muestre cuánto espacio ocupa la imaǵen una vez creada.
 - ¿Puede hacer algo para optimizar o mejorar la imágen?. Describa qué modificaciones puede hacer para optimizar la imágen.
 
@@ -103,10 +113,10 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
 
 Una vez creada la imágen, debería ser capaz de correr la aplicación.
 
-**[ENTREGABLE]:**
+**[ENTREGABLE:](./entregable.md#correr-la-aplicación)**
 
 - Ejecute un comando para poder correr la aplicación.
-- Explique el comando y cada parámetro enviado
+- Explique el comando y cada parámetro enviado.
 - Muestre una captura de pantalla o un copy-paste del contenedor corriendo.
 - Adjunte una captura de pantalla con la aplicación funcionando con la URL utilizada para acceder.
 
@@ -124,18 +134,17 @@ En esta parte 2, haremos algunos cambios y actualizaremos la aplicación.
    + <p className="text-center">No hay nada en la lista! | by: [SU APELLIDO.NOMBRE]</p>
    ```
 
-**[ENTREGABLE]**
+**[ENTREGABLE](./entregable.md#1-actualizar-el-código-fuente)**
 
-- Ejecutemos los comando necesarios para que la aplicación tome los cambios.
-- Realice un etiquetado coherente respecto a los cambios en la imágen.
-- Mostrar captura de pantalla con la app corriendo.
+- Ejecutemos los comando necesarios para que la aplicación tome los cambios. Realice un etiquetado (tag) coherente respecto a los cambios en la imágen.
+- Mostrar captura de pantalla con la app corriendo con las modificaciones realizadas.
 
 
 ### 2. Elimine el contenedor e imágen anterior
 
 La actualización del código recientemente realizada deja obsoleta la antigua versión.
 
-**[ENTREGABLE]:**
+**[ENTREGABLE](./entregable.md#2-elimine-el-contenedor-e-imágen-anterior)**
 
 - Elimine la imágen y el contenedor hecho en el punto anterior: Mostrar comandos utilizados.
 - Liste las imágenes y contenedores para ver que ya no existen.
@@ -149,10 +158,10 @@ Para compartir la imágen de la aplicación usaremos la registry de [DockerHub](
 > Repase lo realizado en el [Laboratorio 2.3](https://github.com/kity-linuxero/docker_410_practicas/blob/main/labs/02-conceptos-basicos/23-images-push.md#3-subimos-a-la-registry).
 
 
-**[ENTREGABLE]:**
+**[ENTREGABLE](./entregable.md#parte-3---compartir-app)**
 
-- Adjunte los comandos necesarios para que sea posible subir la imaǵen correctamente.
-- Comparta la URL para que pueda ser posible probar y descargar su imágen.
+- Escriba los comandos necesarios para que sea posible subir la imaǵen correctamente.
+- Comparta la URL de DockerHub para que pueda ser posible probar y descargar su imágen.
 - Agregue un _overview_ para el repositorio de Dockerhub con instrucciones para correr la imágen y todo lo que considere necesario para que un tercero pueda ejecutar la imágen.
 
 > [!TIP]
@@ -165,10 +174,9 @@ La aplicación, hasta el momento carece de persistencia de datos, y si el conten
 
 Los datos en esta APP se guardan en un archivo `/etc/todos/todo.db`.
 
-**[ENTREGABLE]**
+**[ENTREGABLE](./entregable.md#parte-4---persistencia-de-datos)**
 
-- Realice los cambios necesarios para que sea posible persistir los datos.
-- Adjunte los comandos utilizados con la explicación correspondiente.
+- Escriba los comandos utilizados para realizar lo solicitado con la explicación correspondiente.
 - Decida que tipo de persistencia es la adecuada para la app.
 
 > [!TIP]
@@ -207,10 +215,10 @@ En la aplicación también es posible setear variables de entorno para parametri
 
 >Consulte `src/persistence/mysql.js` para mas información.
 
-**Teniendo todo esto en cuenta [ENTREGABLE]:**
+**Teniendo todo esto en cuenta [ENTREGABLE](./entregable.md#parte-5---aplicaciones-multicontainer)**
 
 - [Crear una red](https://docker.idepba.com.ar/clase4.html#/network_create) para conexión entre los contenedores que servirá también para conectar a la aplicación.
-- [Crear un nuevo volumen](https://docker.idepba.com.ar/clase4.html#/volume_create)para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es `/var/lib/mysql`.
+- [Crear un nuevo volumen](https://docker.idepba.com.ar/clase4.html#/volume_create) para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es `/var/lib/mysql`.
 - Iniciar el contenedor de base de datos utilizando el comando `docker run` y enviando las variables de entorno listadas.
 - Iniciar el contenedor de la aplicación utilizando el comando `docker run` enviando las variables de entornos necesarias para la conexión con la base de datos.
 
@@ -232,7 +240,7 @@ Listening on port 3000
 > [!IMPORTANT]
 > Conectar ambos contenedores a la misma red. Utilice el parámetro `--name` o `--network-alias` para poder identificar el servidor de base de datos, de manera que el servidor de la app pueda establecer la conexión. La base de datos debe estar previamente iniciada.
 
-### Troubleshooting
+### Troubleshooting (Opcional)
 
 > [!NOTE]  
 > Si no pudo conectar la aplicación a la base de datos y no puede encontrar la falla, dejamos a continuación algunas sugerencias que le pueden ayudar.
@@ -312,13 +320,11 @@ Una vez que hayamos comprobado que la base de datos está corriendo y la base de
 - Observe la **ANSWER SECTION**. Si todo está bien, verá un registro `A` que se resuelve a una dirección IP, en este caso la `172.31.0.2`. En su prueba probablemente tendrá un valor diferente.
 - Si no aparece la sección ANSWER es que no se puede resolver la dirección IP del nombre. Por lo tanto debe verificar que estén conectado a la misma red y que el nombre del host esté bien escrito.
 
-### Parte 6 - Utilizando Docker Compose
+## Parte 6 - Utilizando Docker Compose
 
 Llegando a este punto y habiendo completado cada punto ya tiene la información necesaria para volcarla en un archivo de Docker Compose para simplificar la ejecución de los contenedores.
 
 #### Cree el archivo de Docker Compose
-
-En la carpeta raíz del proyecto, cree un archivo de docker compose `compose.yml` o `docker-compose.yml`.
 
 > [!TIP]
 > Puede ser de utilidad el sitio [composerize](https://www.composerize.com/).
@@ -338,16 +344,22 @@ docker compose up -d
 
 Cambie la imágen del `docker compose` para que tome como origen la imágen que ha subido a Docker Hub con su usuario.
 
+[ENTREGABLE](./entregable.md#parte-6---utilizando-docker-compose)
+
+
 
 ## Referencias:
 
 - [Docker Docs: Docker Workshop](https://docs.docker.com/get-started/workshop/)
 
 ----
-Centro de Formación CFL 410 - Omar Nuñez
 
-IDEP | Instituto de Estudios sobre Estado y Participación
 
-Instructor: Cristian O. Giambruni | e-mail: cgiambruni@gmail.com | IDEP Informática
+
+<p align="center">
+  <img src="./imgs/logos.footer.gray.webp">
+</p>
+
+
 
 
