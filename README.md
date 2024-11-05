@@ -87,7 +87,7 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
     WORKDIR /app
 
     # Copiamos los archivos del proyecto al contenedor
-    COPY . .
+    COPY ./app .
 
     # Instalamos las dependencias del proyecto
     RUN yarn install --production
