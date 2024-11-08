@@ -65,8 +65,6 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
         ├─ package.json
         ├─ .dockerignore
     ```
-> [!TIP]  
-> Para simplificar rrabaje siempre sobre la carpeta `app`.
 
 ### 2. Buildear imágen
 
@@ -74,7 +72,7 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
 > Consulte apuntes de <a href="https://docker.idepba.com.ar/clase3.html#/docker_build" target="_blank">docker build</a>.
 
 - Para buildear la imágen usaremos un `Dockerfile` como el siguiente. Observe y analice el archivo `Dockerfile`.
-- Pegue el archivo `Dockerfile` en la carpeta `app`.
+- Cree un archivo llamado `Dockerfile` en la carpeta `app` con el siguiente contenido:
 
 
 
