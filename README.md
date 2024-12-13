@@ -149,7 +149,7 @@ La actualización del código recientemente realizada deja obsoleta la antigua v
 Para compartir la imágen de la aplicación usaremos la registry de [DockerHub](https://hub.docker.com/).
 
 > [!TIP]
-> Repase lo realizado en el [Laboratorio 2.3](https://github.com/kity-linuxero/docker_410_practicas/blob/main/labs/02-conceptos-basicos/23-images-push.md#3-subimos-a-la-registry).
+> Repase lo realizado en el [Laboratorio 2.4](https://github.com/kity-linuxero/docker_410_practicas/blob/v1.2/labs/02-conceptos-basicos/24-images-push.md).
 
 
 **ENTREGABLE**
