@@ -4,7 +4,7 @@
 [![Supported by](https://img.shields.io/badge/Supported%20by-CFL410-green.svg)](https://centro410laplata.edu.ar/)
 [![Supported by](https://img.shields.io/badge/Supported%20by-IDEP-green.svg)](https://idepba.com.ar/)
 [![Powered](https://img.shields.io/badge/Powered%20by-ATE-green.svg)](https://atepba.org.ar/)
-![Version](https://img.shields.io/badge/Version-1.1-orange)
+![Version](https://img.shields.io/badge/Version-1.2-orange)
 
 ## Trabajo integrador 🐳
 
@@ -18,7 +18,7 @@ En el presente trabajo integrador se evaluará:
 - Correr la aplicación usando docker compose.
 
 > [!IMPORTANT]  
-> La fecha límite de entrega es el 11/11/24.
+> La fecha límite de entrega es el **27/12/24**.
 
 ## Prerequisitos
 
@@ -29,13 +29,7 @@ En el presente trabajo integrador se evaluará:
 
 ### Forma de entrega
 
-Puede elegir alguna de estas opciones:
-
-- Realizar un [fork](https://github.com/kity-linuxero/docker-integradora/fork) del repositorio y modificar el archivo `engregable.md` y agregar el `compose` solicitado.
-- Crear un repositorio de cero y subir ahí los archivos solicitados siguiendo el template en el archivo [entregable.md](./entregable.md)
-- Crear un archivo de texto siguiendo los pasos del archivo `entregable.md` y entregar un zip con la entrega y el compose.
-
-Enviar el link del repositorio o archivo de texto por <a href="https://docker.idepba.com.ar/clase1.html#/intro-presentacion" target="_blank">mail al instructor</a>.
+El TP indicará luego de cada sección la parte **entregable** eso debe completarlo en el siguiente **<a href="https://forms.gle/PNW4CDYHF6LNndT98" target="_blank">formulario</a>**.
 
 
 ## Parte 1 - Conteinerizar una Aplicación
@@ -63,8 +57,10 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
         ├─ src/
         ├─ yarn.lock
         ├─ package.json
+        ├─ Dockerfile
         ├─ .dockerignore
     ```
+
 
 ### 2. Buildear imágen
 
@@ -72,7 +68,6 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
 > Consulte apuntes de <a href="https://docker.idepba.com.ar/clase3.html#/docker_build" target="_blank">docker build</a>.
 
 - Para buildear la imágen usaremos un `Dockerfile` como el siguiente. Observe y analice el archivo `Dockerfile`.
-- Cree un archivo llamado `Dockerfile` en la carpeta `app` con el siguiente contenido:
 
 
 
@@ -99,11 +94,11 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
     CMD ["node", "src/index.js"]
     ```
 
-**[ENTREGABLE:](./entregable.md#creando-la-imágen)**
+**ENTREGABLE:**
 
-- Ejecute el comando correspondiente para buildear la imágen. Elija un nombre de imágen y un tag acorde.
-- Muestre cuánto espacio ocupa la imaǵen una vez creada.
-- ¿Puede hacer algo para optimizar o mejorar la imágen?. Describa qué modificaciones puede hacer para optimizar la imágen.
+- **1.1)** Ejecute el comando correspondiente para buildear la imagen. Elija un nombre de imagen y un tag acorde. 
+- **1.2)** ¿Qué espacio ocupa la imagen una vez creada?
+- **1.3)** ¿Puede hacer algo para optimizar o mejorar la imagen?. Describa qué modificaciones puede hacer para optimizar la imagen.
 
 
 > [!TIP]
@@ -113,12 +108,12 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
 
 Una vez creada la imágen, debería ser capaz de correr la aplicación.
 
-**[ENTREGABLE:](./entregable.md#correr-la-aplicación)**
+**ENTREGABLE:**
 
-- Ejecute un comando para poder correr la aplicación.
-- Explique el comando y cada parámetro enviado.
-- Muestre una captura de pantalla o un copy-paste del contenedor corriendo.
-- Adjunte una captura de pantalla con la aplicación funcionando con la URL utilizada para acceder.
+- **1.4)** Ejecute un comando para poder correr la aplicación.
+- **1.5)** Explique el comando de la respuesta anterior y cada parámetro enviado.
+- **1.6)** ¿Cómo puede saber si el contenedor está corriendo?
+- **1.7)** Adjunte una captura de pantalla con la aplicación funcionando con la URL utilizada para acceder.
 
 
 ## Parte 2 - Actualizar aplicación
@@ -134,20 +129,19 @@ En esta parte 2, haremos algunos cambios y actualizaremos la aplicación.
    + <p className="text-center">No hay nada en la lista! | by: [SU APELLIDO.NOMBRE]</p>
    ```
 
-**[ENTREGABLE](./entregable.md#1-actualizar-el-código-fuente)**
+**ENTREGABLE**
 
-- Ejecutemos los comando necesarios para que la aplicación tome los cambios. Realice un etiquetado (tag) coherente respecto a los cambios en la imágen.
-- Mostrar captura de pantalla con la app corriendo con las modificaciones realizadas.
+- **2.1)** Ejecute los comando necesarios para que la aplicación tome los cambios. Realice un etiquetado (tag) coherente respecto a los cambios en la imágen.
 
 
 ### 2. Elimine el contenedor e imágen anterior
 
 La actualización del código recientemente realizada deja obsoleta la antigua versión.
 
-**[ENTREGABLE](./entregable.md#2-elimine-el-contenedor-e-imágen-anterior)**
+**ENTREGABLE**
 
-- Elimine la imágen y el contenedor hecho en el punto anterior: Mostrar comandos utilizados.
-- Liste las imágenes y contenedores para ver que ya no existen.
+- **2.2)** Elimine la imágen y el contenedor hecho en el punto anterior: Mostrar comandos utilizados.
+- **2.3)** ¿Como puede listar las imágenes para comprobar que se ha eliminado la imagen del punto anterior?
 
 
 ## Parte 3 - Compartir app
@@ -158,11 +152,13 @@ Para compartir la imágen de la aplicación usaremos la registry de [DockerHub](
 > Repase lo realizado en el [Laboratorio 2.3](https://github.com/kity-linuxero/docker_410_practicas/blob/main/labs/02-conceptos-basicos/23-images-push.md#3-subimos-a-la-registry).
 
 
-**[ENTREGABLE](./entregable.md#parte-3---compartir-app)**
+**ENTREGABLE**
 
 - Escriba los comandos necesarios para que sea posible subir la imaǵen correctamente.
-- Comparta la URL de DockerHub para que pueda ser posible probar y descargar su imágen.
 - Agregue un _overview_ para el repositorio de Dockerhub con instrucciones para correr la imágen y todo lo que considere necesario para que un tercero pueda ejecutar la imágen.
+
+
+- **3.1)** Comparta la URL de DockerHub para que pueda ser posible probar y descargar su imágen.
 
 > [!TIP]
 > Utilice el formato [markdown](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) para darle formato al overview.
@@ -174,10 +170,10 @@ La aplicación, hasta el momento carece de persistencia de datos, y si el conten
 
 Los datos en esta APP se guardan en un archivo `/etc/todos/todo.db`.
 
-**[ENTREGABLE](./entregable.md#parte-4---persistencia-de-datos)**
+**ENTREGABLE**
 
-- Escriba los comandos utilizados para realizar lo solicitado con la explicación correspondiente.
-- Decida que tipo de persistencia es la adecuada para la app.
+- **4.1)** Escriba los comandos necesarios para persistir la base de datos.
+- **4.2)** Decida que tipo de persistencia es la adecuada para la app.
 
 > [!TIP]
 > Repase [volúmenes y persistencia](https://docker.idepba.com.ar/clase4.html#/volumenes) de datos.
@@ -215,12 +211,12 @@ En la aplicación también es posible setear variables de entorno para parametri
 
 >Consulte `src/persistence/mysql.js` para mas información.
 
-**[ENTREGABLE:](./entregable.md#parte-5---aplicaciones-multicontainer)**
+**ENTREGABLE:**
 
-- [Crear una red](https://docker.idepba.com.ar/clase4.html#/network_create) para conexión entre los contenedores que servirá también para conectar a la aplicación.
-- [Crear un nuevo volumen](https://docker.idepba.com.ar/clase4.html#/volume_create) para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es `/var/lib/mysql`.
-- Iniciar el contenedor de base de datos utilizando el comando `docker run` y enviando las variables de entorno listadas.
-- Iniciar el contenedor de la aplicación utilizando el comando `docker run` enviando las variables de entornos necesarias para la conexión con la base de datos.
+- **5.1)** [Crear una red](https://docker.idepba.com.ar/clase4.html#/network_create) para conexión entre los contenedores que servirá también para conectar a la aplicación.
+- **5.2)** [Crear un nuevo volumen](https://docker.idepba.com.ar/clase4.html#/volume_create) para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es `/var/lib/mysql`.
+- **5.3)** Iniciar el _contenedor de base de datos_ utilizando el comando `docker run` y enviando las variables de entorno necesarias.
+- **5.4)** Iniciar el _contenedor de la aplicación_ utilizando el comando `docker run` enviando las variables de entornos necesarias para la conexión con la base de datos.
 
 > [!TIP]
 > Set environments variables (-e, --env) [Docker Docs](https://docs.docker.com/reference/cli/docker/container/run/#env).
@@ -240,85 +236,8 @@ Listening on port 3000
 > [!IMPORTANT]
 > Conectar ambos contenedores a la misma red. Utilice el parámetro `--name` o `--network-alias` para poder identificar el servidor de base de datos, de manera que el servidor de la app pueda establecer la conexión. La base de datos debe estar previamente iniciada.
 
-### Troubleshooting (Opcional)
-
-> [!NOTE]  
-> Si no pudo conectar la aplicación a la base de datos y no puede encontrar la falla, dejamos a continuación algunas sugerencias que le pueden ayudar.
-
-#### Verificar base de datos
-
-- Una vez arrancado el contenedor de base de datos si el contenedor está arriba verifique que la base de datos esté arriba con el siguiente comando
-
-    ```bash
-    docker exec -it <mysql-container-id> mysql -u root -p
-    ```
-
-- Una vez que escriba la password entrará a la shell de mysql. Verificamos que exista la base de datos `todos`.
-
-    ```mysql
-    mysql> SHOW DATABASES;
-    ```
-
-- Deberías ver algo así
-
-    ```bash
-    +--------------------+
-    | Database           |
-    +--------------------+
-    | information_schema |
-    | mysql              |
-    | performance_schema |
-    | sys                |
-    | todos              |
-    +--------------------+
-    5 rows in set (0.00 sec)
-    ```
-
-- Para salir de la shell de MySQL escriba:
-
-    ```bash
-    mysql> exit
-    ```
-
-#### Verificar conectividad
-
-Una vez que hayamos comprobado que la base de datos está corriendo y la base de datos exista, verificaremos la conectividad hacia el contenedor donde corre MySQL. Para esto, usaremos la imágen [`nicolaka/netshot`](https://github.com/nicolaka/netshoot) que viene con muchas herramientas útiles para solucionar o depurar problemas de red.
-
-1. Inicie un nuevo contenedor utilizando la imaǵen `nicolaka/netshoot`. Asegurese de conectarse a la misma red. Suponiendo que la red elegida fue `todo-app`, el comando es:
-
-    ```bash
-    docker run -it --network todo-app nicolaka/netshoot
-    ```
-
-2. Una vez dentro del contenedor utilizaremos el comando `dig`, que es una herramienta de DNS. Si el nombre que eligió para la base de datos, mediante el parámetro `--name` o `--network-alias` fue `db` el comando sería el siguiente:
-
-    ```bash
-    dig db
-    ```
-
-- Debería tener un resultado como el siguiente:
-
-    ```
-    ; <<>> DiG 9.18.25 <<>> db
-    ;; global options: +cmd
-    ;; Got answer:
-    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58769
-    ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
-
-    ;; QUESTION SECTION:
-    ;db.				IN	A
-
-    ;; ANSWER SECTION:
-    db.			600	IN	A	172.31.0.2
-
-    ;; Query time: 0 msec
-    ;; SERVER: 127.0.0.11#53(127.0.0.11) (UDP)
-    ;; WHEN: Mon Sep 16 02:02:48 UTC 2024
-    ;; MSG SIZE  rcvd: 38
-    ```
-
-- Observe la **ANSWER SECTION**. Si todo está bien, verá un registro `A` que se resuelve a una dirección IP, en este caso la `172.31.0.2`. En su prueba probablemente tendrá un valor diferente.
-- Si no aparece la sección ANSWER es que no se puede resolver la dirección IP del nombre. Por lo tanto debe verificar que estén conectado a la misma red y que el nombre del host esté bien escrito.
+> [!IMPORTANT]
+> ¿Algo no funciona? Pruebe realizar el troubleshooting de [este documento](./troubleshooting.md)
 
 ## Parte 6 - Utilizando Docker Compose
 
@@ -344,8 +263,10 @@ docker compose up -d
 
 Cambie la imágen del `docker compose` para que tome como origen la imágen que ha subido a Docker Hub con su usuario.
 
-**[ENTREGABLE](./entregable.md#parte-6---utilizando-docker-compose)**
+**ENTREGABLE**
+- **6.1)** Suba el archivo docker compose. El compose debe realizar todo lo necesario para que la aplicación levante con solo ejecutar `docker compose up`. Para probar si realmente funciona correctamente, puede probar su compose en [Play With Docker](https://labs.play-with-docker.com)
 
+--------------
 
 
 ## Referencias:
