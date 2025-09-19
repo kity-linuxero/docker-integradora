@@ -159,7 +159,8 @@ Para compartir la imágen de la aplicación usaremos la registry de [DockerHub](
 
 - **3.1)** Comparta la URL de DockerHub para que pueda ser posible probar y descargar su imágen.
 
-> [!IMPORTANT] Agregue un _overview_ para el repositorio de Dockerhub con instrucciones para correr la imágen y todo lo que considere necesario para que un tercero pueda ejecutar la imágen.
+> [!IMPORTANT]
+> Agregue un _overview_ para el repositorio de Dockerhub con instrucciones para correr la imágen y todo lo que considere necesario para que un tercero pueda ejecutar la imágen.
 
 > [!TIP]
 > Utilice el formato [markdown](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) para darle formato al overview.
