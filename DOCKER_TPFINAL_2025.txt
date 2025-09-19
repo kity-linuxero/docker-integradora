@@ -1,0 +1,75 @@
+DOCKER TP-FINAL 2025
+
+Parte 1 - Conteinerizar una Aplicación
+
+1.1) Ejecute el comando correspondiente para buildear la imagen. Elija un nombre de imagen y un tag acorde.
+<Ponga aquí el comando utilizado>
+
+1.2) ¿Qué espacio ocupa la imagen una vez creada?
+<El tamaño que ocupa la imagen creada>
+
+1.3) ¿Puede hacer algo para optimizar o mejorar la imagen?. Describa qué modificaciones puede hacer para optimizar la imagen.
+< Qué puede hacer para optimizar la imagen? no necesariamente reducir el tamaño, sino optimizar la creación y portabilidad.>
+
+1.4) Ejecute un comando para poder correr la aplicación.
+<Ingrese el comando para correr la aplicación>
+
+1.5) Explique el comando de la respuesta anterior y cada parámetro enviado.
+<Acá los parámetros que ha ingresado>
+
+1.6) ¿Cómo puede saber si el contenedor está corriendo?
+< Comando para ver si está corriendo correctamente>
+
+1.7) Adjunte una captura de pantalla con la aplicación funcionando con la URL utilizada para acceder.
+< llame el archivo captura.png o captura.jpg >
+
+
+Parte 2 - Actualizar aplicación
+
+2.1) Modifique el código fuente como se indicó anteriormente.
+< No hace falta incluir el código fuente, ya que el mismo estará en la imagen >
+
+2.2) Ejecute los comando necesarios para que la aplicación tome los cambios. Realice un etiquetado (tag) coherente respecto a los cambios en la imágen.
+< Acá los comandos utilizados >
+
+2.2) Elimine la imágen y el contenedor hecho en el punto anterior: Mostrar comandos utilizados.
+< El comando para eliminar la imagen y contenedor anterior>
+
+2.3) ¿Como puede listar las imágenes para comprobar que se ha eliminado la imagen del punto anterior?
+< Comando para listar imágenes>
+
+
+Parte 3 - Compartir app
+
+< Ponga acá el link de DockerHub con su imágen >
+
+
+Parte 4 - Persistencia de datos
+
+4.1) Escriba los comandos necesarios para persistir la base de datos.
+<Aquí los comandos>
+
+4.2) Decida que tipo de persistencia es la adecuada para la app.
+< Volumenes o bind mounts? elija uno a su preferencia >
+
+
+Parte 5 - Aplicaciones multicontainer
+
+5.1) Crear una red para conexión entre los contenedores que servirá también para conectar a la aplicación.
+<comando para crear las redes>
+
+5.2) Crear un nuevo volumen para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es /var/lib/mysql.
+<Cómo persistirá los datos de la base MySQL?
+
+5.3) Iniciar el contenedor de base de datos utilizando el comando docker run y enviando las variables de entorno necesarias.
+<comando para arrancar la base MySQL>
+
+5.4) Iniciar el contenedor de la aplicación utilizando el comando docker run enviando las variables de entornos necesarias para la conexión con la base de datos.
+<comando para arrancar la APP y que se vea con la base de datos> (prestar atención que NO lo haga con SQLite>
+
+
+
+Parte 6 - Utilizando Docker Compose
+
+< Realice un archivo compose para que con solamente el comando "docker compose up" la app levante todo. Debe tener la imagen de Docker hub>
+

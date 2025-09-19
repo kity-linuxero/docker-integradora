@@ -4,7 +4,7 @@
 [![Supported by](https://img.shields.io/badge/Supported%20by-CFL410-green.svg)](https://centro410laplata.edu.ar/)
 [![Supported by](https://img.shields.io/badge/Supported%20by-IDEP-green.svg)](https://idepba.com.ar/)
 [![Powered](https://img.shields.io/badge/Powered%20by-ATE-green.svg)](https://atepba.org.ar/)
-![Version](https://img.shields.io/badge/Version-1.2-orange)
+![Version](https://img.shields.io/badge/Version-1.3-orange)
 
 ## Trabajo integrador 🐳
 
@@ -18,7 +18,7 @@ En el presente trabajo integrador se evaluará:
 - Correr la aplicación usando docker compose.
 
 > [!IMPORTANT]  
-> La fecha límite de entrega es el **27/12/24**.
+> La fecha límite de entrega es el **6/10/25**.
 
 ## Prerequisitos
 
@@ -29,8 +29,10 @@ En el presente trabajo integrador se evaluará:
 
 ### Forma de entrega
 
-El TP indicará luego de cada sección la parte **entregable** eso debe completarlo en el siguiente **<a href="https://forms.gle/PNW4CDYHF6LNndT98" target="_blank">formulario</a>**.
-
+- Se debe completar cada uno de los puntos solicitados en el presente documento en este <a href="./DOCKER_TPFINAL_2025.txt" download> archivo `.txt` </a>.
+- Adjuntar capturas de pantalla donde se solicite.
+- Adjuntar el archivo `compose.yaml` que se solicita al final del documento.
+- Todo en un archivo comprimido `.zip` o `.tar.gz` nombrado `apellido.nombre.ext`, por ejemplo `Apellido.Nombre.zip` y enviar vía e-mail a `cgiambruni@idepba.com.ar`.
 
 ## Parte 1 - Conteinerizar una Aplicación
 
@@ -67,7 +69,7 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
 > [!TIP]
 > Consulte apuntes de <a href="https://docker.idepba.com.ar/clase3.html#/docker_build" target="_blank">docker build</a>.
 
-- Para buildear la imágen usaremos un `Dockerfile` como el siguiente. Observe y analice el archivo `Dockerfile`.
+- Para buildear la imágen usaremos el archivo `Dockerfile` que está en el repo. Observe y analice el archivo `Dockerfile`.
 
 
 
@@ -131,7 +133,8 @@ En esta parte 2, haremos algunos cambios y actualizaremos la aplicación.
 
 **ENTREGABLE**
 
-- **2.1)** Ejecute los comando necesarios para que la aplicación tome los cambios. Realice un etiquetado (tag) coherente respecto a los cambios en la imágen.
+- **2.1)** Modifique el código fuente como se indicó anteriormente.
+- **2.2)** Ejecute los comando necesarios para que la aplicación tome los cambios. Realice un etiquetado (tag) coherente respecto a los cambios en la imágen.
 
 
 ### 2. Elimine el contenedor e imágen anterior
@@ -154,11 +157,9 @@ Para compartir la imágen de la aplicación usaremos la registry de [DockerHub](
 
 **ENTREGABLE**
 
-- Escriba los comandos necesarios para que sea posible subir la imaǵen correctamente.
-- Agregue un _overview_ para el repositorio de Dockerhub con instrucciones para correr la imágen y todo lo que considere necesario para que un tercero pueda ejecutar la imágen.
-
-
 - **3.1)** Comparta la URL de DockerHub para que pueda ser posible probar y descargar su imágen.
+
+> [!IMPORTANT] Agregue un _overview_ para el repositorio de Dockerhub con instrucciones para correr la imágen y todo lo que considere necesario para que un tercero pueda ejecutar la imágen.
 
 > [!TIP]
 > Utilice el formato [markdown](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) para darle formato al overview.
@@ -214,7 +215,7 @@ En la aplicación también es posible setear variables de entorno para parametri
 **ENTREGABLE:**
 
 - **5.1)** [Crear una red](https://docker.idepba.com.ar/clase4.html#/network_create) para conexión entre los contenedores que servirá también para conectar a la aplicación.
-- **5.2)** [Crear un nuevo volumen](https://docker.idepba.com.ar/clase4.html#/volume_create) para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es `/var/lib/mysql`.
+- **5.2)** [Crear un nuevo volumen](https://docker.idepba.com.ar/clase5.html#/volume_create) para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es `/var/lib/mysql`.
 - **5.3)** Iniciar el _contenedor de base de datos_ utilizando el comando `docker run` y enviando las variables de entorno necesarias.
 - **5.4)** Iniciar el _contenedor de la aplicación_ utilizando el comando `docker run` enviando las variables de entornos necesarias para la conexión con la base de datos.
 
