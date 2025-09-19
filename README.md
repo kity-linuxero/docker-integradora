@@ -152,7 +152,7 @@ La actualización del código recientemente realizada deja obsoleta la antigua v
 Para compartir la imágen de la aplicación usaremos la registry de [DockerHub](https://hub.docker.com/).
 
 > [!TIP]
-> Repase lo realizado en el [Laboratorio 2.4](https://github.com/kity-linuxero/docker_410_practicas/blob/v1.2/labs/02-conceptos-basicos/24-images-push.md).
+> Repase lo realizado en el [Laboratorio 2.4](https://github.com/kity-linuxero/docker_410_practicas/blob/v1.3/labs/02-conceptos-basicos/24-images-push.md).
 
 
 **ENTREGABLE**
@@ -177,7 +177,7 @@ Los datos en esta APP se guardan en un archivo `/etc/todos/todo.db`.
 - **4.2)** Decida que tipo de persistencia es la adecuada para la app.
 
 > [!TIP]
-> Repase [volúmenes y persistencia](https://docker.idepba.com.ar/clase4.html#/volumenes) de datos.
+> Repase [volúmenes y persistencia](https://docker.idepba.com.ar/clase5.html#/volumenes) de datos.
 
 
 ## Parte 5 - Aplicaciones multicontainer
@@ -247,7 +247,7 @@ Llegando a este punto y habiendo completado cada punto ya tiene la información 
 #### Cree el archivo de Docker Compose
 
 > [!TIP]
-> Puede ser de utilidad el sitio [composerize](https://www.composerize.com/).
+> Puede ser de utilidad el sitio [composerize](https://www.composerize.com/) o con una herramienta de IA de su preferencia.
 
 > [!NOTE]  
 > Teniendo en cuenta que la aplicación necesitará que la base de datos esté previamente iniciada, utilice los elementos de compose para explicitar dicha dependencia.
