@@ -4,7 +4,7 @@
 [![Supported by](https://img.shields.io/badge/Supported%20by-CFL410-green.svg)](https://centro410laplata.edu.ar/)
 [![Supported by](https://img.shields.io/badge/Supported%20by-IDEP-green.svg)](https://idepba.com.ar/)
 [![Powered](https://img.shields.io/badge/Powered%20by-ATE-green.svg)](https://atepba.org.ar/)
-![Version](https://img.shields.io/badge/Version-1.3-orange)
+![Version](https://img.shields.io/badge/Version-1.4-orange)
 
 ## Trabajo integrador 🐳
 
@@ -13,30 +13,33 @@ En el presente trabajo integrador se evaluará:
 
 - Conteinerizar una aplicación simple.
 - Buildear y correr una imágen como un contenedor.
-- Compartir imágenes usando Docker Hub.
-- Deployar aplicaciones Docker usando multiples contenedores usando una base de datos.
+- Compartir imágenes en Docker Hub.
+- Deployar aplicaciones Docker usando multiples contenedores usando una base de datos que corre en un contenedor aparte.
 - Correr la aplicación usando docker compose.
 
 > [!IMPORTANT]  
-> La fecha límite de entrega es el **6/10/25**.
+> Fecha límite de entrega 10/11/2025.
 
 ## Prerequisitos
 
 - Tener instalado Docker Desktop o Docker CLI
-- Tener instalado un editor de texto, como <a href="https://notepad-plus-plus.org/downloads/" target="_blank">Notepad++</a> o <a href="https://vscodium.com/" target="_blank">VSCodium</a>.
+- Tener instalado un editor de texto, como <a href="https://notepad-plus-plus.org/downloads/" target="_blank">Notepad++</a>, <a href="https://code.visualstudio.com/Download" target="_blank">VSCode</a> o <a href="https://vscodium.com/" target="_blank">VSCodium</a>.
 - Tener instalado un cliente Git (opcional).
 
 
 ### Forma de entrega
 
-- Se debe completar cada uno de los puntos solicitados en el presente documento en este <a href="./DOCKER_TPFINAL_2025.txt" download> archivo `.txt` </a>.
-- Adjuntar capturas de pantalla donde se solicite.
-- Adjuntar el archivo `compose.yaml` que se solicita al final del documento.
-- Todo en un archivo comprimido `.zip` o `.tar.gz` nombrado `apellido.nombre.ext`, por ejemplo `Apellido.Nombre.zip` y enviar vía e-mail a `cgiambruni@idepba.com.ar`.
+Se proponen dos formas de entrega:
+
+1) [Forkear](https://github.com/kity-linuxero/docker-integradora/fork) el presente repositorio y completar este archivo `README.md` donde lo pida, incluyendo capturas de pantalla. Luego enviar la URL del repo por mail. (Recomendado si está familiarizado con Git, Github y Markdown).
+
+2) Completar cada uno de los puntos solicitados en el presente documento en este <a href="./DOCKER_TPFINAL_2025.txt" download> archivo `.txt` </a> y enviarlo por e-mail a cgiambruni@gmail.com en un archivo `zip` con las capturas de pantalla solicitadas y el archivo `compose.yml` por e-mail. El archivo zip debe llamarse `APELLIDO.NOMBRE.zip`.
+
+
 
 ## Parte 1 - Conteinerizar una Aplicación
 
-Para este trabajo integrador, usaremos un simple _todo list manager_ que corre en Node.js. Si no estás familiarizado con Node.js, no te preocupes, este trabajo integrador no requiere conocimientos de programación. Solo usaremos una app de ejemplo para poder armar las imágenes y correr los contenedores.
+Para este trabajo integrador, usaremos una app simple **todo list manager** que corre en Node.js y podemos levantarla en nuestro navegador web. Si no estás familiarizado con Node.js, no te preocupes, este trabajo integrador no requiere conocimientos de programación. Solo usaremos una app de ejemplo para poder armar las imágenes y correr los contenedores.
 
 ![](./imgs/screenshot.png)
 
@@ -51,7 +54,7 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
     ```
 - Si no tiene un cliente git instalado, puede descargar el repositorio del siguiente [link](https://codeload.github.com/kity-linuxero/docker-integradora/zip/refs/heads/main). Luego debe descomprimir el archivo zip.
 
-- Una vez descargada la aplicación, deberías ver el código fuente de la misma con la siguiente estructura de directorios en la carpeta `app`:
+- Una vez descargada la aplicación, deberías ver el código fuente de la misma con la siguiente estructura de directorios dentro de la carpeta `app`:
 
     ```
         app/
@@ -99,8 +102,17 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
 **ENTREGABLE:**
 
 - **1.1)** Ejecute el comando correspondiente para buildear la imagen. Elija un nombre de imagen y un tag acorde. 
+    ```bash
+    # Escriba acá el comando utilizado
+    ```
 - **1.2)** ¿Qué espacio ocupa la imagen una vez creada?
+    ```bash
+    # Espacio utilizado
+    ```
 - **1.3)** ¿Puede hacer algo para optimizar o mejorar la imagen?. Describa qué modificaciones puede hacer para optimizar la imagen.
+    ```bash
+    # Describa que podría hacer para mejorar u optimizar la creación de la imágen.
+    ```
 
 
 > [!TIP]
@@ -113,9 +125,19 @@ Una vez creada la imágen, debería ser capaz de correr la aplicación.
 **ENTREGABLE:**
 
 - **1.4)** Ejecute un comando para poder correr la aplicación.
+    ```bash
+    # Escriba acá el comando
+    ```
 - **1.5)** Explique el comando de la respuesta anterior y cada parámetro enviado.
+    ```bash
+    # Escriba la explicación
+    ```
 - **1.6)** ¿Cómo puede saber si el contenedor está corriendo?
-- **1.7)** Adjunte una captura de pantalla con la aplicación funcionando con la URL utilizada para acceder.
+    ```bash
+    # Escriba acá el comando
+    ```
+- **1.7)** Adjunte una captura de pantalla con la aplicación funcionando con la URL utilizada para acceder. Reemplace la imágen siguiente por su captura de pantalla.
+    ![](./imgs/broken_img.png)
 
 
 ## Parte 2 - Actualizar aplicación
@@ -124,7 +146,7 @@ En esta parte 2, haremos algunos cambios y actualizaremos la aplicación.
 
 ### 1. Actualizar el código fuente
 
-- En el archivo `app/src/static/js/app.js` actualizaremos la línea 56, con los siguientes cambios: 
+- En el archivo `app/src/static/js/app.js` actualizaremos la **línea 56**, con los siguientes cambios: 
 
    ```diff
    - <p className="text-center">Aún no hay items. ¡Agrega tu primer item arriba!</p>
@@ -144,7 +166,13 @@ La actualización del código recientemente realizada deja obsoleta la antigua v
 **ENTREGABLE**
 
 - **2.2)** Elimine la imágen y el contenedor hecho en el punto anterior: Mostrar comandos utilizados.
+    ```bash
+    # Escriba acá el comando utilizado
+    ```
 - **2.3)** ¿Como puede listar las imágenes para comprobar que se ha eliminado la imagen del punto anterior?
+    ```bash
+    # Escriba acá el comando utilizado
+    ```
 
 
 ## Parte 3 - Compartir app
@@ -152,12 +180,14 @@ La actualización del código recientemente realizada deja obsoleta la antigua v
 Para compartir la imágen de la aplicación usaremos la registry de [DockerHub](https://hub.docker.com/).
 
 > [!TIP]
-> Repase lo realizado en el [Laboratorio 2.4](https://github.com/kity-linuxero/docker_410_practicas/blob/v1.3/labs/02-conceptos-basicos/24-images-push.md).
+> De ser necesario, repase lo realizado en el [Laboratorio 2.4](https://github.com/kity-linuxero/docker_410_practicas/blob/v1.4/labs/02-conceptos-basicos/24-images-push.md).
 
 
 **ENTREGABLE**
 
 - **3.1)** Comparta la URL de DockerHub para que pueda ser posible probar y descargar su imágen.
+
+    [Inserte la URL de la imágen](https://dockerhub.com/)
 
 > [!IMPORTANT]
 > Agregue un _overview_ para el repositorio de Dockerhub con instrucciones para correr la imágen y todo lo que considere necesario para que un tercero pueda ejecutar la imágen.
@@ -174,8 +204,11 @@ Los datos en esta APP se guardan en un archivo `/etc/todos/todo.db`.
 
 **ENTREGABLE**
 
-- **4.1)** Escriba los comandos necesarios para persistir la base de datos.
-- **4.2)** Decida que tipo de persistencia es la adecuada para la app.
+- **4.1)** Escriba los comandos necesarios para persistir la base de datos. Decida que tipo de persistencia es la adecuada para su app ([Bind mounts](https://docker.idepba.com.ar/clase5.html#/bind_mounts) o [volumes](https://docker.idepba.com.ar/clase5.html#/volumes))
+    ```bash
+    # Escriba el comando necesario
+    ```
+
 
 > [!TIP]
 > Repase [volúmenes y persistencia](https://docker.idepba.com.ar/clase5.html#/volumenes) de datos.
@@ -211,14 +244,26 @@ En la aplicación también es posible setear variables de entorno para parametri
 - `MYSQL_PASSWORD`: La password utilizada para la conexión.
 - `MYSQL_DB`: La base de datos que se utilizará una vez conectada la aplicación.
 
->Consulte `src/persistence/mysql.js` para mas información.
+>Consulte [src/persistence/mysql.js](https://github.com/kity-linuxero/docker-integradora/blob/main/app/src/persistence/mysql.js) para mas información.
 
 **ENTREGABLE:**
 
 - **5.1)** [Crear una red](https://docker.idepba.com.ar/clase4.html#/network_create) para conexión entre los contenedores que servirá también para conectar a la aplicación.
+    ```bash
+    # Escriba acá el comando utilizado
+    ```
 - **5.2)** [Crear un nuevo volumen](https://docker.idepba.com.ar/clase5.html#/volume_create) para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es `/var/lib/mysql`.
+    ```bash
+    # Escriba acá el comando utilizado
+    ```
 - **5.3)** Iniciar el _contenedor de base de datos_ utilizando el comando `docker run` y enviando las variables de entorno necesarias.
+    ```bash
+    # Escriba acá el comando utilizado
+    ```
 - **5.4)** Iniciar el _contenedor de la aplicación_ utilizando el comando `docker run` enviando las variables de entornos necesarias para la conexión con la base de datos.
+    ```bash
+    # Escriba acá el comando utilizado
+    ```
 
 > [!TIP]
 > Set environments variables (-e, --env) [Docker Docs](https://docs.docker.com/reference/cli/docker/container/run/#env).
@@ -266,7 +311,7 @@ docker compose up -d
 Cambie la imágen del `docker compose` para que tome como origen la imágen que ha subido a Docker Hub con su usuario.
 
 **ENTREGABLE**
-- **6.1)** Suba el archivo docker compose. El compose debe realizar todo lo necesario para que la aplicación levante con solo ejecutar `docker compose up`. Para probar si realmente funciona correctamente, puede probar su compose en [Play With Docker](https://labs.play-with-docker.com)
+- **6.1)** Suba el archivo docker compose en este repositorio en la carpeta raíz o adjunte en el `.zip`. El compose debe realizar todo lo necesario para que la aplicación levante con solo ejecutar `docker compose up`. Para probar si realmente funciona correctamente, puede probar su compose en [Play With Docker](https://labs.play-with-docker.com)
 
 --------------
 
