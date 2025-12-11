@@ -12,13 +12,13 @@
 En el presente trabajo integrador se evaluará:
 
 - Conteinerizar una aplicación simple.
-- Buildear la imágen y subirla a Docker Hub.
+- Buildear la imagen y subirla a Docker Hub.
 - Correr la aplicación multicontenedor usando docker compose.
 
 > [!IMPORTANT]  
 > Fecha límite de entrega 15/12/2025.
 
-## Prerequisitos
+## Prerrequisitos
 
 - Docker Desktop o Docker CLI
 - Git (opcional).
@@ -61,7 +61,7 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
     ```
 
 
-## Parte 2 - Modificar aplicación, generar imágen y correr contenedor
+## Parte 2 - Modificar aplicación, generar imagen y correr contenedor
 
 Haremos algunos cambios y actualizaremos la aplicación.
 
@@ -77,7 +77,7 @@ Haremos algunos cambios y actualizaremos la aplicación.
 > Es importante que ponga su nombre y apellido en el archivo `app/src/static/js/app.js` para después saber quien hizo el trabajo integrador.
 
 
-### 2. Preparar archivo Dockerfile para buildear la imágen
+### 2. Preparar archivo Dockerfile para buildear la imagen
 
 > [!TIP]
 > Consulte apuntes de <a href="https://docker.idepba.com.ar/clase3.html#/docker_build" target="_blank">docker build</a>.
@@ -104,21 +104,21 @@ Haremos algunos cambios y actualizaremos la aplicación.
     CMD ["node", "src/index.js"]
     ```
 
-Proceda a buildear la imágen con el siguiente comando:
+Proceda a buildear la imagen con el siguiente comando:
 
 ```bash
 docker build -t <NOMBRE_IMAGEN> .
 ```
 
 > [!TIP]
-> El `Dockerfile` puede ser mejorado. Es opcional. Pero si lo desea puede investigar como mejorar el `Dockerfile` con **multi-stage build** para reducir el tamaño de la imágen final.
+> El `Dockerfile` puede ser mejorado. Es opcional. Pero si lo desea puede investigar como mejorar el `Dockerfile` con **multi-stage build** para reducir el tamaño de la imagen final.
 
 
 
 
 ### 3. Correr la aplicación
 
-Una vez creada la imágen, debería ser capaz de correr la aplicación. Con el siguiente comando:
+Una vez creada la imagen, debería ser capaz de correr la aplicación. Con el siguiente comando:
 
 ```bash
 docker run -d -p 3000:3000 --name todo-app <NOMBRE_IMAGEN>
@@ -140,19 +140,23 @@ Listening on port 3000
 Si todo está ok, podría acceder a la aplicación en [http://localhost:3000](http://localhost:3000).
 
 
+- Detenga y elimine el contenedor de la aplicación con el siguiente comando:
 
+    ```bash
+    docker rm -f todo-app
+    ```
 
 
 ## Parte 3 - Compartir app
 
-Para compartir la imágen de la aplicación usaremos la registry de [DockerHub](https://hub.docker.com/).
+Para compartir la imagen de la aplicación usaremos la registry de [DockerHub](https://hub.docker.com/).
 
 > [!TIP]
 > De ser necesario, repase lo realizado en el [Laboratorio 2.4](https://github.com/kity-linuxero/docker_410_practicas/blob/v1.5/labs/02-conceptos-basicos/24-images-push.md).
 
 
 > [!IMPORTANT]
-> Debe volver a buildear la imágen y subirla a DockerHub para aprobar el trabajo integrador.
+> Debe volver a buildear la imagen y subirla a DockerHub para aprobar el trabajo integrador.
 
 
 
@@ -164,7 +168,7 @@ A continuación agregaremos un segundo contenedor para que sea de base de datos 
 
 ### Base de datos MySQL
 
-Usaremos una imágen basada en MySQL. La imágen en será `mysql:8.0`. Para poder iniciar y tener la configuración sobre la base de datos, usaremos *variables de entorno*. 
+Usaremos una imagen basada en MySQL. La imagen será `mysql:8.0`. Para poder iniciar y tener la configuración sobre la base de datos, usaremos *variables de entorno*. 
 
 Para mas info consulte la sección _variables de entorno_ de [Docker Hub MySQL](https://hub.docker.com/_/mysql/).
 
@@ -180,7 +184,7 @@ A modo de resumen, tendremos que configurar las siguientes variables de entorno 
 
 **Variables de entorno para la aplicación:**
 
-- `MYSQL_HOST`: Hostname donde corre el servidor MySQL.
+- `MYSQL_HOST`: Hostname donde corre el servidor MySQL. Coincidir con el **nombre del servicio** o con el `container_name` de la base de datos.
 - `MYSQL_USER`: El usuario para la conexión.
 - `MYSQL_PASSWORD`: La password utilizada para la conexión.
 - `MYSQL_DB`: La base de datos que se utilizará una vez conectada la aplicación.
@@ -194,17 +198,17 @@ Genere un volumen para persistir los datos de la base de datos. El punto de mont
 
 ## Parte 5 - Generando el Docker Compose
 
-Crear el archivo `docker-compose.yml` con toda la configuración necesaria para que levante la aplicación y la base de datos. Con las variables de entorno configuradas, la imágen subida a Docker Hub y el volume para persistir los datos de la base de datos.
+Crear el archivo `docker-compose.yml` con toda la configuración necesaria para que levante la aplicación y la base de datos. Con las variables de entorno configuradas, la imagen subida a Docker Hub y el volúmen para persistir los datos de la base de datos.
 
 > [!TIP]
 > Puede ser de utilidad el sitio [composerize](https://www.composerize.com/) o con una herramienta de IA de su preferencia.
 
 
 > [!IMPORTANT]  
-> La `image` del `docker compose` debe tomar como origen la imágen que ha subido a Docker Hub con su usuario.
+> La `image` del `docker compose` debe tomar como origen la imagen que ha subido a Docker Hub con su usuario.
 
 > [!IMPORTANT]  
-> Tener en cuenta que los datos deben persistir en el contenedor de base de datos. Por lo tanto, utilice un volume para persistir los datos de la base de datos. La base de datos se encuentra en `/var/lib/mysql`.
+> Tener en cuenta que los datos deben persistir en el contenedor de base de datos. Por lo tanto, utilice un volúmen para persistir los datos de la base de datos. La base de datos se encuentra en `/var/lib/mysql`.
 
 
 #### Corra los contenedores
