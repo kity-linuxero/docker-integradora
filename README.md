@@ -82,14 +82,11 @@ Haremos algunos cambios y actualizaremos la aplicación.
 > [!TIP]
 > Consulte apuntes de <a href="https://docker.idepba.com.ar/clase3.html#/docker_build" target="_blank">docker build</a>.
 
-- Acá tiene un `Dockerfile` que puede usar para buildear la imágen.
+- El archivo `Dockerfile` se encuentra en la carpeta `app` con el siguiente contenido:
 
     ```dockerfile
     # Usamos la imagen base de Alpine Linux
-    FROM alpine:latest
-
-    # Actualizamos los paquetes e instalamos Node.js y Yarn directamente desde los repositorios oficiales
-    RUN apk add --no-cache nodejs yarn
+    FROM node:18-alpine
 
     # Establecemos el directorio de trabajo
     WORKDIR /app
@@ -98,9 +95,9 @@ Haremos algunos cambios y actualizaremos la aplicación.
     COPY . .
 
     # Instalamos las dependencias del proyecto
-    RUN yarn install --production
+    RUN yarn install
 
-    # Exponemos el puerto de la aplicación (ejemplo: 3000)
+    # Exponemos el puerto de la aplicación
     EXPOSE 3000
 
     # Comando por defecto para ejecutar la aplicación
@@ -114,7 +111,7 @@ docker build -t <NOMBRE_IMAGEN> .
 ```
 
 > [!TIP]
-> El `Dockerfile` puede ser mejorado. Es opcional. Pero si lo desea puede investigar como mejorar el `Dockerfile` mejorando el `FROM` y el con **multi-stage build** para reducir el tamaño de la imágen final.
+> El `Dockerfile` puede ser mejorado. Es opcional. Pero si lo desea puede investigar como mejorar el `Dockerfile` con **multi-stage build** para reducir el tamaño de la imágen final.
 
 
 
@@ -151,27 +148,15 @@ Si todo está ok, podría acceder a la aplicación en [http://localhost:3000](ht
 Para compartir la imágen de la aplicación usaremos la registry de [DockerHub](https://hub.docker.com/).
 
 > [!TIP]
-> De ser necesario, repase lo realizado en el [Laboratorio 2.4](https://github.com/kity-linuxero/docker_410_practicas/blob/v1.4/labs/02-conceptos-basicos/24-images-push.md).
+> De ser necesario, repase lo realizado en el [Laboratorio 2.4](https://github.com/kity-linuxero/docker_410_practicas/blob/v1.5/labs/02-conceptos-basicos/24-images-push.md).
 
 
 > [!IMPORTANT]
 > Debe volver a buildear la imágen y subirla a DockerHub para aprobar el trabajo integrador.
 
 
-## Parte 4 - Persistencia de datos
 
-La aplicación, por defecto, carece de persistencia de datos, y si el contenedor se elimina los datos `to-dos` se pierden.
-
-Tenemos dos formas de guardar los datos de la aplicación utilizando distintas bases de datos:
-- **SQLite**: Se crea la base de datos en `/etc/todos/todo.db`.
-- **MySQL**: Se crea la base de datos en otro contenedor que corre una imágen de MySQL.
-
-Para persistir los datos con SQLite, simplemente hay que montar el directorio `/etc/todos` del contenedor con un volume.
-
-Pero a fines de poner integrar todo el conocimiento adquirido en el curso, **usaremos la opción de MySQL** que va a correr en otro contenedor.
-
-
-## Parte 5 - Aplicaciones multicontainer
+## Parte 4 - Aplicaciones multicontainer
 
 A continuación agregaremos un segundo contenedor para que sea de base de datos basada en `MySQL`.
 
@@ -203,7 +188,11 @@ A modo de resumen, tendremos que configurar las siguientes variables de entorno 
 >Consulte [src/persistence/mysql.js](https://github.com/kity-linuxero/docker-integradora/blob/main/app/src/persistence/mysql.js) para mas información.
 
 
-## Parte 6 - Generando el Docker Compose
+### Persistencia de datos
+
+Genere un volumen para persistir los datos de la base de datos. El punto de montaje es `/var/lib/mysql`.
+
+## Parte 5 - Generando el Docker Compose
 
 Crear el archivo `docker-compose.yml` con toda la configuración necesaria para que levante la aplicación y la base de datos. Con las variables de entorno configuradas, la imágen subida a Docker Hub y el volume para persistir los datos de la base de datos.
 
@@ -242,7 +231,7 @@ Listening on port 3000
 Para corroborar que la app funcione en otro entorno, pruebe eliminar todo y volver a levantar la app entera:
 
 ```bash
-docker compose down -v
+docker compose down -v # Se borran los volumes
 docker compose up -d
 ```
 

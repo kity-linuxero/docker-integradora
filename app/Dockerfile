@@ -1,8 +1,5 @@
 # Usamos la imagen base de Alpine Linux
-FROM alpine:latest
-
-# Actualizamos los paquetes e instalamos Node.js y Yarn directamente desde los repositorios oficiales
-RUN apk add --no-cache nodejs yarn
+FROM node:18-alpine
 
 # Establecemos el directorio de trabajo
 WORKDIR /app
@@ -11,9 +8,9 @@ WORKDIR /app
 COPY . .
 
 # Instalamos las dependencias del proyecto
-RUN yarn install --production
+RUN yarn install
 
-# Exponemos el puerto de la aplicación (ejemplo: 3000)
+# Exponemos el puerto de la aplicación
 EXPOSE 3000
 
 # Comando por defecto para ejecutar la aplicación
