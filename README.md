@@ -4,7 +4,7 @@
 [![Supported by](https://img.shields.io/badge/Supported%20by-CFL410-green.svg)](https://centro410laplata.edu.ar/)
 [![Supported by](https://img.shields.io/badge/Supported%20by-IDEP-green.svg)](https://idepba.com.ar/)
 [![Powered](https://img.shields.io/badge/Powered%20by-ATE-green.svg)](https://atepba.org.ar/)
-![Version](https://img.shields.io/badge/Version-1.5-orange)
+![Version](https://img.shields.io/badge/Version-1.6-orange)
 
 ## Trabajo integrador 🐳
 
@@ -16,7 +16,7 @@ En el presente trabajo integrador se evaluará:
 - Correr la aplicación multicontenedor usando docker compose.
 
 > [!IMPORTANT]  
-> Fecha límite de entrega 15/12/2025.
+> Fecha límite de entrega 24/04/2026.
 
 ## Prerrequisitos
 
@@ -27,8 +27,7 @@ En el presente trabajo integrador se evaluará:
 
 ### Forma de entrega
 
-Enviar el archivo `docker-compose.yml` por correo electrónico a `cgiambruni@gmail.com`.
-
+Subir el archivo `docker-compose.yml` en el [Campus Virtual IDEP](https://campus.idepba.com.ar) en la sección "Trabajo Final" del curso [Fundamentos y usos prácticos de Docker 2026 - 1](https://campus.idepba.com.ar/course/view.php?id=5)
 
 
 ## Parte 1 - Conteinerizar una Aplicación
