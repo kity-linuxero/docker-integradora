@@ -4,7 +4,8 @@
 [![Supported by](https://img.shields.io/badge/Supported%20by-CFL410-green.svg)](https://centro410laplata.edu.ar/)
 [![Supported by](https://img.shields.io/badge/Supported%20by-IDEP-green.svg)](https://idepba.com.ar/)
 [![Powered](https://img.shields.io/badge/Powered%20by-ATE-green.svg)](https://atepba.org.ar/)
-![Version](https://img.shields.io/badge/Version-1.6-orange)
+[![Campus](https://img.shields.io/badge/Campus-IDEP-green.svg)](https://campus.idepba.com.ar)
+![Version](https://img.shields.io/badge/Version-1.7-orange)
 
 ## Trabajo integrador 🐳
 
@@ -15,9 +16,6 @@ En el presente trabajo integrador se evaluará:
 - Buildear la imagen y subirla a Docker Hub.
 - Correr la aplicación multicontenedor usando docker compose.
 
-> [!IMPORTANT]  
-> Fecha límite de entrega 24/04/2026.
-
 ## Prerrequisitos
 
 - Docker Desktop o Docker CLI
@@ -27,7 +25,7 @@ En el presente trabajo integrador se evaluará:
 
 ### Forma de entrega
 
-Subir el archivo `docker-compose.yml` en el [Campus Virtual IDEP](https://campus.idepba.com.ar) en la sección "Trabajo Final" del curso [Fundamentos y usos prácticos de Docker 2026 - 1](https://campus.idepba.com.ar/course/view.php?id=5)
+Subir el archivo `docker-compose.yml` en el [Campus Virtual IDEP](https://campus.idepba.com.ar) en la sección "Trabajo Final" del curso [Fundamentos y usos prácticos de Docker 2026 - 2](https://campus.idepba.com.ar/course/view.php?id=13)
 
 
 ## Parte 1 - Conteinerizar una Aplicación
