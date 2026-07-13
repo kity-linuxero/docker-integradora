@@ -5,7 +5,7 @@
 [![Supported by](https://img.shields.io/badge/Supported%20by-IDEP-green.svg)](https://idepba.com.ar/)
 [![Powered](https://img.shields.io/badge/Powered%20by-ATE-green.svg)](https://atepba.org.ar/)
 [![Campus](https://img.shields.io/badge/Campus-IDEP-green.svg)](https://campus.idepba.com.ar)
-![Version](https://img.shields.io/badge/Version-1.7-orange)
+![Version](https://img.shields.io/badge/Version-1.8-orange)
 
 ## Trabajo integrador 🐳
 
@@ -149,7 +149,7 @@ Si todo está ok, podría acceder a la aplicación en [http://localhost:3000](ht
 Para compartir la imagen de la aplicación usaremos la registry de [DockerHub](https://hub.docker.com/).
 
 > [!TIP]
-> De ser necesario, repase lo realizado en el [Laboratorio 2.4](https://github.com/kity-linuxero/docker_410_practicas/blob/v1.5/labs/02-conceptos-basicos/24-images-push.md).
+> De ser necesario, repase lo realizado en el [Laboratorio 2.4](https://github.com/kity-linuxero/docker_410_practicas/blob/v1.8/labs/02-conceptos-basicos/24-images-push.md).
 
 
 > [!IMPORTANT]
@@ -192,6 +192,9 @@ A modo de resumen, tendremos que configurar las siguientes variables de entorno 
 ### Persistencia de datos
 
 Genere un volumen para persistir los datos de la base de datos. El punto de montaje es `/var/lib/mysql`.
+
+> [!TIP]
+> Puede promptear pasandole los datos de la imágen que subiste a dockerhub, que habilite el puerto 3000 y pegando todo lo que está en la parte 4 ;)
 
 ## Parte 5 - Generando el Docker Compose
 
