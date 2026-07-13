@@ -194,7 +194,7 @@ A modo de resumen, tendremos que configurar las siguientes variables de entorno 
 Genere un volumen para persistir los datos de la base de datos. El punto de montaje es `/var/lib/mysql`.
 
 > [!TIP]
-> Puede promptear pasandole los datos de la imágen que subiste a dockerhub, que habilite el puerto 3000 y pegando todo lo que está en la parte 4 ;)
+> Puede promptear pasandole los datos de la imágen que subiste a dockerhub, que habilite el puerto 3000 y pegando todo lo que está en la parte 4. Y para el 10.. decile que agrege un healthcheck ;)
 
 ## Parte 5 - Generando el Docker Compose
 
